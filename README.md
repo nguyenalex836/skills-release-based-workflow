@@ -16,59 +16,40 @@ _Create a release based workflow that is built on the foundations of the GitHub 
 </header>
 
 <!--
-  <<< Author notes: Step 2 >>>
+  <<< Author notes: Step 3 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
-## Step 2: Add a new feature to the release branch
+## Step 3: Open a release pull request
 
-_Great job creating a beta release :heart:_
+_Nice work adding a new feature :smile:_
 
-### Release management
+### Release branches and `main`
 
-As you prepare for a future release, you'll need to organize more than the tasks and features. It's important to create a clear workflow for your team, and to make sure that the work remains organized.
+You should open a pull request between your release branch and main as early as possible. It might be open for a long time, and that's okay.
 
-There are several strategies for managing releases. Some teams might use long-lived branches, like `production`, `dev`, and `main`. Some teams use simple feature branches, releasing from the main branch.
+In general, the pull request description can include:
 
-No one strategy is better than another. We always recommend being intentional about branches and reducing long-lived branches whenever possible.
+- A [reference to an issue](https://docs.github.com/en/articles/basic-writing-and-formatting-syntax/#mentioning-people-and-teams) that the pull request addresses.
+- A description of the changes proposed in the pull request.
+- [@mentions](https://docs.github.com/en/articles/basic-writing-and-formatting-syntax/#mentioning-people-and-teams) of the person or team responsible for reviewing proposed changes.
 
-In this exercise, you'll use the `release-v1.0` branch to be your one long-lived branch per release version.
+To expedite the creation of this pull request, I've added a pull request template to the repository. When you create a pull request, default text will automatically be displayed. This should help you identify and fill out all the necessary information. If you don't want to use the template content, just remove the text from the pull request and replace it with your pull request message.
 
-### Protected branches
+### :keyboard: Activity: Open a release pull request
 
-Like the `main` branch, you can protect release branches. This means you can protect branches from force pushes or accidental deletion. This is already configured in this repository.
+Let's make a new pull request comparing the `release-v1.0` branch to the `main` branch.
 
-### Add a feature
-
-Releases are usually made of many smaller changes. Let's pretend we don't know about the bug we added earlier and we'll focus on a few features to update our game before the version update.
-
-- You should update the page background color to black.
-- I'll help you change the text colors to green.
-
-### :keyboard: Activity: Update `base.css`
-
-1. Create a new branch off of the `main` branch and change the `body` CSS declaration in `base.css` to match what is below. This will set the page background to black.
-
-```
-body {
-    background-color: black;
-}
-```
-
-1. Open a pull request with `release-v1.0` as the `base` branch, and your new branch as the `compare` branch.
-1. Fill in the pull request template to describe your changes.
+1. Open a **new pull request** with `base: main` and `compare: release-v1.0`.
+1. Ensure the title of your pull request is "Release v1.0".
+1. Include a detailed pull request body, an example is below:
+   ```
+   ## Description:
+   - Changed page background color to black.
+   - Changed game text color to green.
+   ```
 1. Click **Create pull request**.
-
-### Merge the new feature to the release branch
-
-Even with releases, the GitHub flow is still an important strategy for working with your team. It's a good idea to use short-lived branches for quick feature additions and bug fixes.
-
-Merge this feature pull request so that you can open the release pull request as early as possible.
-
-### :keyboard: Activity: Merge the pull request
-
-1. Click **Merge pull request**, and delete your branch.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
