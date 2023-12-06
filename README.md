@@ -16,54 +16,60 @@ _Create a release based workflow that is built on the foundations of the GitHub 
 </header>
 
 <!--
-  <<< Author notes: Course start >>>
-  Include start button, a note about Actions minutes,
-  and tell the learner why they should take the course.
+  <<< Author notes: Step 2 >>>
+  Start this step by acknowledging the previous step.
+  Define terms and link to docs.github.com.
 -->
 
-## Welcome
+## Step 2: Add a new feature to the release branch
 
-Create a release based workflow that is built on the foundations of the [GitHub flow](https://guides.github.com/introduction/flow/). When your team uses a release-based workflow, GitHub makes it easy to collaborate with deployable iterations of your project that you can package and make available for a wider audience to download and use.
+_Great job creating a beta release :heart:_
 
-GitHub releases allow your team to package and provide software to your users based on a specific point in the history of your project.
+### Release management
 
-- **Who is this for**: Developers, DevOps Engineers, IT Operations, managers, and teams.
-- **What you'll learn**: How to follow a release-based workflow.
-- **What you'll build**: You will create tags, releases, and release notes.
-- **Prerequisites**: If you need to learn about branches, commits, and pull requests, take [Introduction to GitHub](https://github.com/skills/introduction-to-github) first.
-- **How long**: This course takes less than 1 hour to complete.
+As you prepare for a future release, you'll need to organize more than the tasks and features. It's important to create a clear workflow for your team, and to make sure that the work remains organized.
 
-In this course, you will:
+There are several strategies for managing releases. Some teams might use long-lived branches, like `production`, `dev`, and `main`. Some teams use simple feature branches, releasing from the main branch.
 
-1. Create a beta release
-2. Add a feature to a release
-3. Open a release pull request
-4. Add release notes and merge
-5. Finalize a release
-6. Commit a hotfix
-7. Create a hotfix release
+No one strategy is better than another. We always recommend being intentional about branches and reducing long-lived branches whenever possible.
 
-### How to start this course
+In this exercise, you'll use the `release-v1.0` branch to be your one long-lived branch per release version.
 
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'skills',
-  template_name: 'release-based-workflow',
-  owner: '@me',
-  name: 'skills-release-based-workflow',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
+### Protected branches
 
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=release-based-workflow&owner=%40me&name=skills-release-based-workflow&description=My+clone+repository&visibility=public)
+Like the `main` branch, you can protect release branches. This means you can protect branches from force pushes or accidental deletion. This is already configured in this repository.
 
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+### Add a feature
+
+Releases are usually made of many smaller changes. Let's pretend we don't know about the bug we added earlier and we'll focus on a few features to update our game before the version update.
+
+- You should update the page background color to black.
+- I'll help you change the text colors to green.
+
+### :keyboard: Activity: Update `base.css`
+
+1. Create a new branch off of the `main` branch and change the `body` CSS declaration in `base.css` to match what is below. This will set the page background to black.
+
+```
+body {
+    background-color: black;
+}
+```
+
+1. Open a pull request with `release-v1.0` as the `base` branch, and your new branch as the `compare` branch.
+1. Fill in the pull request template to describe your changes.
+1. Click **Create pull request**.
+
+### Merge the new feature to the release branch
+
+Even with releases, the GitHub flow is still an important strategy for working with your team. It's a good idea to use short-lived branches for quick feature additions and bug fixes.
+
+Merge this feature pull request so that you can open the release pull request as early as possible.
+
+### :keyboard: Activity: Merge the pull request
+
+1. Click **Merge pull request**, and delete your branch.
+1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
 
