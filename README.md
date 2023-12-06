@@ -16,62 +16,59 @@ _Create a release based workflow that is built on the foundations of the GitHub 
 </header>
 
 <!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
+  <<< Author notes: Step 2 >>>
+  Start this step by acknowledging the previous step.
+  Define terms and link to docs.github.com.
 -->
 
-## Step 1: Create a beta release
+## Step 2: Add a new feature to the release branch
 
-_Welcome to "Release-based workflow" :sparkle:_
+_Great job creating a beta release :heart:_
 
-### The GitHub flow
+### Release management
 
-The [GitHub flow](https://guides.github.com/introduction/flow/) is a lightweight, branch-based workflow for projects with regular deployments.
+As you prepare for a future release, you'll need to organize more than the tasks and features. It's important to create a clear workflow for your team, and to make sure that the work remains organized.
 
-![github-flow](https://user-images.githubusercontent.com/6351798/48032310-63842400-e114-11e8-8db0-06dc0504dcb5.png)
+There are several strategies for managing releases. Some teams might use long-lived branches, like `production`, `dev`, and `main`. Some teams use simple feature branches, releasing from the main branch.
 
-Some projects may deploy more often, with continuous deployment. There might be a "release" every time there's a new commit on main.
+No one strategy is better than another. We always recommend being intentional about branches and reducing long-lived branches whenever possible.
 
-But, some projects rely on a different structure for versions and releases.
+In this exercise, you'll use the `release-v1.0` branch to be your one long-lived branch per release version.
 
-### Versions
+### Protected branches
 
-Versions are different iterations of updated software like operating systems, apps, or dependencies. Common examples are "Windows 8.1" to "Windows 10", or "macOS High Sierra" to "macOS Mojave".
+Like the `main` branch, you can protect release branches. This means you can protect branches from force pushes or accidental deletion. This is already configured in this repository.
 
-Developers update code and then run tests on the project for bugs. During that time, the developers might set up certain securities to protect from new code or bugs. Then, the tested code is ready for production. Teams version the code and release it for installation by end users.
+### Add a feature
 
-### :keyboard: Activity: Create a release for the current codebase
+Releases are usually made of many smaller changes. Let's pretend we don't know about the bug we added earlier and we'll focus on a few features to update our game before the version update.
 
-In this step, you will create a release for this repository on GitHub.
+- You should update the page background color to black.
+- I'll help you change the text colors to green.
 
-GitHub Releases point to a specific commit. Releases can include release notes in Markdown files, and attached binaries.
+### :keyboard: Activity: Update `base.css`
 
-Before using a release based workflow for a larger release, let's create a tag and a release.
+1. Create a new branch off of the `main` branch and change the `body` CSS declaration in `base.css` to match what is below. This will set the page background to black.
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Go to the **Releases** page for this repository.
-   - _Tip: To reach this page, click the **Code** tab at the top of your repository. Then, find the navigation bar below the repository description, and click the **Releases** heading link._
-1. Click **Create a new release**.
-1. In the field for _Tag version_, specify a number. In this case, use **v0.9**. Keep the _Target_ as **main**.
-1. Give the release a title, like "First beta release". If you'd like, you could also give the release a short description.
-1. Select the checkbox next to **Set as a pre-release**, since it is representing a beta version.
-1. Click **Publish release**.
+```
+body {
+    background-color: black;
+}
+```
 
-### :keyboard: Activity: Introduce a bug to be fixed later
-
-To set the stage for later, let's also add a bug that we'll fix as part of the release workflow in later steps. We've already created a `update-text-colors` branch for you so let's create and merge a pull request with this branch.
-
-1. Open a **new pull request** with `base: release-v1.0` and `compare: update-text-colors`.
-1. Set the pull request title to "Updated game text style". You can include a detailed pull request body, an example is below:
-   ```
-   ## Description:
-   - Updated game text color to green
-   ```
+1. Open a pull request with `release-v1.0` as the `base` branch, and your new branch as the `compare` branch.
+1. Fill in the pull request template to describe your changes.
 1. Click **Create pull request**.
-1. We'll merge this pull request now. Click **Merge pull request** and delete your branch.
+
+### Merge the new feature to the release branch
+
+Even with releases, the GitHub flow is still an important strategy for working with your team. It's a good idea to use short-lived branches for quick feature additions and bug fixes.
+
+Merge this feature pull request so that you can open the release pull request as early as possible.
+
+### :keyboard: Activity: Merge the pull request
+
+1. Click **Merge pull request**, and delete your branch.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
